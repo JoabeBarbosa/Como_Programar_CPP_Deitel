@@ -13,7 +13,14 @@ using namespace std;
 
     void GradeBook::setCourseName(string name)
     {
+        if(name.length()<=25)
         courseName = name;
+        if(name.length()>25)
+        {
+            courseName = name.substr(0, 25);
+            cout << "(teste21 Big-head)Name \"" << name<< "\" exceeds maximum length (25).\n"
+                 << "Limiting courseName to first 25 characters.\n" << endl;
+        }
     }
 
     string GradeBook::getCourseName()
@@ -26,4 +33,3 @@ using namespace std;
         cout << "Welcome to Grade Book for\n" << getCourseName() << "!"
              << endl;
     }
-
